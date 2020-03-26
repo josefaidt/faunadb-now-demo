@@ -1,8 +1,8 @@
-import { HttpLink } from 'apollo-link-http'
+import { createHttpLink } from 'apollo-link-http'
 import { ApolloServer, makeRemoteExecutableSchema, introspectSchema } from 'apollo-server-micro'
 import fetch from 'isomorphic-unfetch'
 
-const link = new HttpLink({
+const link = createHttpLink({
   uri: 'https://graphql.fauna.com/graphql',
   fetch,
   headers: {
@@ -19,14 +19,13 @@ const getHandler = async () => {
     schema: await introspectSchema(link),
     link
   })
-
-  const server = new ApolloServer({ schema, path: '/api' })
-  handler = server.createHandler()
+  
+  const server = new ApolloServer({ schema })
+  handler = server.createHandler({ path: '/api' })
   return handler
 }
 
 export default async (req, res) => {
-  console.log('REQUESTED')
   const handler = await getHandler()
   await handler(req, res)
 }
