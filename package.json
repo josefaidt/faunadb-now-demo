@@ -1,0 +1,24 @@
+{
+  "name": "demo-fauna-now",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": ""
+  },
+  "dependencies": {
+    "apollo-link-http": "^1.5.16",
+    "apollo-server": "^2.11.0",
+    "apollo-server-micro": "^2.11.0",
+    "faunadb": "^2.13.1",
+    "graphql": "^14.6.0",
+    "graphql-request": "^1.8.2",
+    "graphql-tools": "^4.0.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "micro": "^9.3.4",
+    "nodemon": "^2.0.2"
+  }
+}

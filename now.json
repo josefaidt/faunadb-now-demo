@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "env": {
+    "DEMO_FAUNA_NOW_TOKEN": "@demo_fauna_now_token"
+  } 
+}
