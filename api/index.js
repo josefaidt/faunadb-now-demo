@@ -1,7 +1,6 @@
-import { ApolloServer } from 'apollo-server-micro'
 import { HttpLink } from 'apollo-link-http'
-import { makeRemoteExecutableSchema, introspectSchema } from 'graphql-tools'
-import fetch from 'node-fetch'
+import { ApolloServer, makeRemoteExecutableSchema, introspectSchema } from 'apollo-server-micro'
+import fetch from 'isomorphic-unfetch'
 
 const link = new HttpLink({
   uri: 'https://graphql.fauna.com/graphql',
@@ -21,7 +20,7 @@ const getHandler = async () => {
     link
   })
 
-  const server = new ApolloServer({ schema })
+  const server = new ApolloServer({ schema, path: '/api' })
   handler = server.createHandler()
   return handler
 }
