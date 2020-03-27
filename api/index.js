@@ -20,7 +20,7 @@ const getHandler = async () => {
     link
   })
   
-  const server = new ApolloServer({ schema })
+  const server = new ApolloServer({ schema, introspection: true })
   handler = server.createHandler({ path: '/api' })
   return handler
 }
