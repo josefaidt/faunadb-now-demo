@@ -1,0 +1,10 @@
+type Player {
+  name: String!
+  health: Int
+  mana: Int
+  logged: Boolean
+}
+
+type Query {
+  allPlayers: [Player]!
+}
