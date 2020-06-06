@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "apollo-link-http": "^1.5.16",
-    "apollo-server-micro": "^2.11.0",
+    "apollo-server-micro": "^2.14.2",
     "faunadb": "^2.13.1",
     "graphql": "^14.6.0",
     "isomorphic-unfetch": "^3.0.0"
